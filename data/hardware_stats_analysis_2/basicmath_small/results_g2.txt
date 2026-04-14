@@ -1,0 +1,14 @@
+# started on Sun Apr 12 00:48:01 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/basicmath_small' (20 runs):
+
+               617      dTLB-load-misses          #    0.98% of all dTLB cache accesses  ( +-  6.35% )  (84.19%)
+            72,649      dTLB-loads                                                    ( +-  1.98% )  (82.58%)
+             1,369      iTLB-load-misses          # 1369.00% of all iTLB cache accesses  ( +-  7.94% )  (82.59%)
+                96      iTLB-loads                                                    ( +-  3.96% )  (82.58%)
+           292,361      branch-misses:uk          #    1.03% of all branches          ( +-  0.18% )  (83.63%)
+        28,435,589      branches:uk                                                   ( +-  0.15% )  (84.43%)
+
+             0.407 +- 0.111 seconds time elapsed  ( +- 27.31% )
+

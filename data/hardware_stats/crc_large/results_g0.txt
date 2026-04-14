@@ -1,0 +1,14 @@
+# started on Tue Apr 14 11:59:15 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/crc ../benchmarks/bin/mibench/inputs/large.pcm' (20 runs):
+
+       612,489,895      instructions:u            #    2.85  insn per cycle           ( +-  0.02% )  (83.30%)
+       215,538,071      cpu-cycles:u                                                  ( +-  0.13% )  (83.31%)
+            33,712      L1-dcache-load-misses     #    0.02% of all L1-dcache accesses  ( +-  2.65% )  (83.30%)
+       186,444,082      L1-dcache-loads                                               ( +-  0.01% )  (83.31%)
+               860      L1-icache-load-misses     #    0.63% of all L1-icache accesses  ( +-  6.03% )  (83.30%)
+           136,882      L1-icache-loads                                               ( +-  0.95% )  (83.48%)
+
+          0.072445 +- 0.000181 seconds time elapsed  ( +-  0.25% )
+

@@ -1,0 +1,14 @@
+# started on Sun Apr 12 20:04:01 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/sha ../benchmarks/bin/mibench/inputs/sha_input_large.asc' (10 runs):
+
+       125,671,092      instructions:uk           #    1.80  insn per cycle           ( +- 10.88% )  (80.59%)
+        63,921,164      cpu-cycles:uk                                                 ( +-  8.80% )  (80.36%)
+           111,919      L1-dcache-load-misses     #    0.65% of all L1-dcache accesses  ( +- 98.94% )  (83.22%)
+        13,010,335      L1-dcache-loads                                               ( +- 32.87% )  (85.27%)
+             7,117      L1-icache-load-misses     #    0.90% of all L1-icache accesses  ( +- 72.69% )  (85.27%)
+           710,975      L1-icache-loads                                               ( +- 32.75% )  (85.29%)
+
+           0.02366 +- 0.00270 seconds time elapsed  ( +- 11.42% )
+

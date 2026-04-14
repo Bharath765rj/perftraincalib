@@ -1,0 +1,14 @@
+# started on Sun Apr 12 00:49:21 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/fft 4 4096' (20 runs):
+
+        40,150,674      instructions:uk           #    1.49  insn per cycle           ( +-  0.88% )  (77.14%)
+        27,154,517      cpu-cycles:uk                                                 ( +-  0.65% )  (85.02%)
+            53,968      L1-dcache-load-misses     #    0.39% of all L1-dcache accesses  ( +-  2.63% )  (81.10%)
+        14,557,595      L1-dcache-loads                                               ( +-  0.50% )  (88.61%)
+             4,538      L1-icache-load-misses     #    0.40% of all L1-icache accesses  ( +-  9.19% )  (88.59%)
+         1,182,242      L1-icache-loads                                               ( +-  1.29% )  (79.54%)
+
+            0.0647 +- 0.0547 seconds time elapsed  ( +- 84.53% )
+

@@ -1,0 +1,14 @@
+# started on Tue Apr 14 11:59:23 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/toast -fps -c ../benchmarks/bin/mibench/inputs/large.au' (20 runs):
+
+     1,088,083,130      instructions:u            #    2.86  insn per cycle           ( +-  0.01% )  (82.94%)
+       379,543,910      cpu-cycles:u                                                  ( +-  0.06% )  (82.94%)
+            25,565      L1-dcache-load-misses     #    0.01% of all L1-dcache accesses  ( +-  1.29% )  (83.54%)
+       321,442,295      L1-dcache-loads                                               ( +-  0.02% )  (83.74%)
+            27,425      L1-icache-load-misses     #    0.17% of all L1-icache accesses  ( +-  0.32% )  (83.75%)
+        15,835,731      L1-icache-loads                                               ( +-  0.03% )  (83.09%)
+
+         0.1239648 +- 0.0000971 seconds time elapsed  ( +-  0.08% )
+

@@ -1,0 +1,14 @@
+# started on Mon Apr  6 16:11:30 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/bf e ../benchmarks/bin/mibench/inputs/bf_input_small.asc /tmp/bf_output_small.enc 1234567890abcdeffedcba0987654321' (20 runs):
+
+               367      dTLB-load-misses          #    4.69% of all dTLB cache accesses  ( +-  7.54% )  (83.98%)
+             7,872      dTLB-loads                                                    ( +-  0.35% )  (82.35%)
+               216      iTLB-load-misses          #   20.10% of all iTLB cache accesses  ( +-  2.94% )  (82.27%)
+             1,069      iTLB-loads                                                    ( +-  0.71% )  (82.37%)
+            20,384      branch-misses:uk          #    0.35% of all branches          ( +-  2.26% )  (82.32%)
+         5,672,789      branches:uk                                                   ( +-  0.35% )  (86.73%)
+
+         0.0063381 +- 0.0000429 seconds time elapsed  ( +-  0.68% )
+

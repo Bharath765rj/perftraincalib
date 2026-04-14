@@ -1,0 +1,14 @@
+# started on Sun Apr 12 19:57:50 2026
+
+
+ Performance counter stats for '/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/qsort/bin/qsort_O3 ../benchmarks/bin/mibench/inputs/qsort_input_large.dat' (10 runs):
+
+             3,906      dTLB-load-misses          #   17.02% of all dTLB cache accesses  ( +-  6.92% )  (82.84%)
+            23,415      dTLB-loads                                                    ( +-  1.85% )  (82.99%)
+             5,040      iTLB-load-misses          #  971.10% of all iTLB cache accesses  ( +-  4.62% )  (83.58%)
+               502      iTLB-loads                                                    ( +-  1.49% )  (83.36%)
+         1,135,223      branch-misses:uk          #    1.00% of all branches          ( +-  0.21% )  (83.91%)
+       113,779,900      branches:uk                                                   ( +-  0.17% )  (83.31%)
+
+            0.8950 +- 0.0970 seconds time elapsed  ( +- 10.84% )
+

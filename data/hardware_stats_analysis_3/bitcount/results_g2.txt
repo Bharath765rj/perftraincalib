@@ -1,0 +1,14 @@
+# started on Sun Apr 12 19:57:30 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/bitcnts 75000' (10 runs):
+
+               213      dTLB-load-misses          #    7.21% of all dTLB cache accesses  ( +- 10.19% )  (68.23%)
+             2,910      dTLB-loads                                                    ( +-  0.76% )  (68.16%)
+               196      iTLB-load-misses          #   99.19% of all iTLB cache accesses  ( +-  6.75% )  (81.57%)
+               211      iTLB-loads                                                    ( +-  2.67% )
+            20,840      branch-misses:uk          #    0.24% of all branches          ( +-  1.10% )
+         8,773,999      branches:uk                                                   ( +-  0.63% )  (82.04%)
+
+         0.0036524 +- 0.0000213 seconds time elapsed  ( +-  0.58% )
+

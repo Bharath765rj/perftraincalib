@@ -1,0 +1,14 @@
+# started on Sun Apr 12 00:50:01 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/crc ../benchmarks/bin/mibench/inputs/large.pcm' (20 runs):
+
+             7,373      dTLB-load-misses          #   31.23% of all dTLB cache accesses  ( +-  0.34% )  (83.17%)
+            23,285      dTLB-loads                                                    ( +-  0.50% )  (83.17%)
+               351      iTLB-load-misses          #  107.36% of all iTLB cache accesses  ( +-  3.68% )  (83.17%)
+               348      iTLB-loads                                                    ( +-  3.72% )  (83.16%)
+            45,407      branch-misses:uk          #    0.03% of all branches          ( +-  0.50% )  (83.45%)
+       135,872,617      branches:uk                                                   ( +-  0.01% )  (83.88%)
+
+          0.065529 +- 0.000100 seconds time elapsed  ( +-  0.15% )
+

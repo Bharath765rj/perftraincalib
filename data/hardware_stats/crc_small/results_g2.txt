@@ -1,0 +1,14 @@
+# started on Tue Apr 14 11:59:15 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/crc ../benchmarks/bin/mibench/inputs/small.pcm' (20 runs):
+
+               104      dTLB-load-misses          #   28.21% of all dTLB cache accesses  ( +-  5.22% )  (73.92%)
+               338      dTLB-loads                                                    ( +-  1.95% )  (73.84%)
+               827      cpu/event=0x84,umask=0xff/                                     ( +-  4.18% )  (73.85%)
+         8,534,818      cpu/event=0x94,umask=0xff/                                     ( +-  0.22% )  (84.30%)
+             1,456      branch-misses:u           #    0.02% of all branches          ( +-  1.47% )
+         7,270,112      branches:u                                                    ( +-  0.18% )  (94.09%)
+
+         0.0043066 +- 0.0000261 seconds time elapsed  ( +-  0.61% )
+

@@ -1,0 +1,14 @@
+# started on Mon Apr  6 15:29:31 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/qsort_small ../benchmarks/bin/mibench/inputs/qsort_input_small.dat' (20 runs):
+
+        40,720,346      instructions:uk           #    0.70  insn per cycle           ( +-  0.70% )  (83.61%)
+        58,451,858      cpu-cycles:uk                                                 ( +-  0.30% )  (83.59%)
+           429,452      L1-dcache-load-misses     #    2.37% of all L1-dcache accesses  ( +-  3.20% )  (83.59%)
+        17,737,161      L1-dcache-loads                                               ( +-  0.33% )  (83.62%)
+            13,116      L1-icache-load-misses     #    0.40% of all L1-icache accesses  ( +-  2.98% )  (83.57%)
+         3,320,681      L1-icache-loads                                               ( +-  0.71% )  (82.01%)
+
+           0.02068 +- 0.00191 seconds time elapsed  ( +-  9.22% )
+

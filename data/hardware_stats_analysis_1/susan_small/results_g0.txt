@@ -1,0 +1,14 @@
+# started on Mon Apr  6 15:31:11 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/susan ../benchmarks/bin/mibench/inputs/susan_input_small.pgm /tmp/susan_output_small.pgm -s' (20 runs):
+
+        17,418,454      instructions:uk           #    3.00  insn per cycle           ( +-  4.41% )  (48.33%)
+         5,845,996      cpu-cycles:uk                                                 ( +-  0.97% )  (70.56%)
+            15,333      L1-dcache-load-misses     #    0.29% of all L1-dcache accesses  ( +-  0.99% )
+         5,341,845      L1-dcache-loads                                               ( +-  0.10% )
+             2,330      L1-icache-load-misses     #    1.73% of all L1-icache accesses  ( +-  0.82% )
+           104,983      L1-icache-loads                                               ( +-  6.24% )  (81.11%)
+
+         0.0025495 +- 0.0000167 seconds time elapsed  ( +-  0.66% )
+

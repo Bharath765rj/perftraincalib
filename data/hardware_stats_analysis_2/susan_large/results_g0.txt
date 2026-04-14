@@ -1,0 +1,14 @@
+# started on Sun Apr 12 00:49:17 2026
+
+
+ Performance counter stats for '/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/susan/bin/susan_O4 ../benchmarks/bin/mibench/inputs/susan_input_large.pgm /tmp/susan_output_large.pgm -s' (20 runs):
+
+       371,162,168      instructions:uk           #    3.92  insn per cycle           ( +-  0.06% )  (81.52%)
+        94,587,203      cpu-cycles:uk                                                 ( +-  0.04% )  (81.48%)
+            43,415      L1-dcache-load-misses     #    0.05% of all L1-dcache accesses  ( +-  8.01% )  (83.39%)
+        79,687,617      L1-dcache-loads                                               ( +-  0.01% )  (85.16%)
+             2,995      L1-icache-load-misses     #    0.73% of all L1-icache accesses  ( +-  2.29% )  (85.27%)
+           452,633      L1-icache-loads                                               ( +-  3.08% )  (83.17%)
+
+          0.027783 +- 0.000553 seconds time elapsed  ( +-  1.99% )
+

@@ -1,0 +1,14 @@
+# started on Mon Apr  6 15:29:37 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/qsort_large ../benchmarks/bin/mibench/inputs/qsort_input_large.dat' (20 runs):
+
+       456,364,531      instructions:uk           #    1.12  insn per cycle           ( +-  0.27% )  (82.99%)
+       389,251,216      cpu-cycles:uk                                                 ( +-  0.95% )  (82.91%)
+         1,561,720      L1-dcache-load-misses     #    1.10% of all L1-dcache accesses  ( +-  2.58% )  (83.37%)
+       139,550,546      L1-dcache-loads                                               ( +-  0.38% )  (83.21%)
+           110,719      L1-icache-load-misses     #    0.43% of all L1-icache accesses  ( +-  7.09% )  (83.84%)
+        23,859,739      L1-icache-loads                                               ( +-  1.62% )  (83.67%)
+
+             1.576 +- 0.129 seconds time elapsed  ( +-  8.17% )
+

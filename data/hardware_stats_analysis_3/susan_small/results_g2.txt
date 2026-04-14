@@ -1,0 +1,14 @@
+# started on Sun Apr 12 19:58:00 2026
+
+
+ Performance counter stats for '/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/susan/bin/susan_O4 ../benchmarks/bin/mibench/inputs/susan_input_small.pgm /tmp/susan_output_small.pgm -s' (10 runs):
+
+               530      dTLB-load-misses          #   13.86% of all dTLB cache accesses  ( +-  6.57% )  (59.20%)
+             5,255      dTLB-loads                                                    ( +-  6.67% )  (62.98%)
+               236      iTLB-load-misses          #   56.84% of all iTLB cache accesses  ( +-  3.75% )  (92.88%)
+               406      iTLB-loads                                                    ( +-  1.13% )
+            14,689      branch-misses:uk          #    0.75% of all branches          ( +-  1.05% )
+         1,995,338      branches:uk                                                   ( +-  0.80% )  (84.94%)
+
+         0.0030128 +- 0.0000171 seconds time elapsed  ( +-  0.57% )
+

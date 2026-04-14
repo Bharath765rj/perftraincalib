@@ -1,0 +1,14 @@
+# started on Sun Apr 12 00:50:24 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/sha ../benchmarks/bin/mibench/inputs/sha_input_small.asc' (20 runs):
+
+               748      dTLB-load-misses          #    7.71% of all dTLB cache accesses  ( +- 12.24% )  (57.30%)
+            13,275      dTLB-loads                                                    ( +-  4.10% )  (57.40%)
+               345      iTLB-load-misses          #   66.72% of all iTLB cache accesses  ( +-  5.28% )  (95.42%)
+               515      iTLB-loads                                                    ( +-  0.61% )
+            21,961      branch-misses:uk          #    2.35% of all branches          ( +-  0.40% )
+         1,046,176      branches:uk                                                   ( +-  2.98% )  (89.88%)
+
+         0.0025355 +- 0.0000119 seconds time elapsed  ( +-  0.47% )
+

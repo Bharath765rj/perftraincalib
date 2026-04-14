@@ -1,0 +1,14 @@
+# started on Mon Apr  6 16:11:30 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/bf e ../benchmarks/bin/mibench/inputs/bf_input_large.asc /tmp/bf_output_large.enc 1234567890abcdeffedcba0987654321' (20 runs):
+
+       359,236,171      instructions:uk           #    2.09  insn per cycle           ( +-  0.65% )  (83.35%)
+       169,794,852      cpu-cycles:uk                                                 ( +-  0.80% )  (83.55%)
+           507,663      L1-dcache-load-misses     #    0.45% of all L1-dcache accesses  ( +-  7.50% )  (83.56%)
+       113,300,849      L1-dcache-loads                                               ( +-  0.65% )  (83.55%)
+            31,311      L1-icache-load-misses     #    2.13% of all L1-icache accesses  ( +-  8.80% )  (83.55%)
+         1,359,513      L1-icache-loads                                               ( +-  8.79% )  (82.44%)
+
+           0.06701 +- 0.00268 seconds time elapsed  ( +-  4.00% )
+

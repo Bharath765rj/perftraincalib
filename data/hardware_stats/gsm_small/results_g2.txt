@@ -1,0 +1,14 @@
+# started on Tue Apr 14 11:59:23 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/toast -fps -c ../benchmarks/bin/mibench/inputs/small.au' (20 runs):
+
+               107      dTLB-load-misses          #   30.37% of all dTLB cache accesses  ( +-  4.93% )  (61.55%)
+               433      dTLB-loads                                                    ( +-  3.42% )  (61.53%)
+               822      cpu/event=0x84,umask=0xff/                                     ( +-  1.63% )  (91.57%)
+         3,116,172      cpu/event=0x94,umask=0xff/                                     ( +-  0.13% )
+            42,637      branch-misses:u           #    3.66% of all branches          ( +-  0.39% )
+         1,180,139      branches:u                                                    ( +-  0.18% )  (85.36%)
+
+         0.0029864 +- 0.0000123 seconds time elapsed  ( +-  0.41% )
+

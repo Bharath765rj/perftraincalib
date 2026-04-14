@@ -1,0 +1,14 @@
+# started on Sun Apr 12 00:49:25 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/fft 8 32768' (20 runs):
+
+       387,487,358      instructions:uk           #    1.71  insn per cycle           ( +-  0.08% )  (83.23%)
+       225,746,725      cpu-cycles:uk                                                 ( +-  0.21% )  (82.84%)
+           451,952      L1-dcache-load-misses     #    0.37% of all L1-dcache accesses  ( +-  5.59% )  (83.19%)
+       122,884,447      L1-dcache-loads                                               ( +-  0.10% )  (83.18%)
+            25,473      L1-icache-load-misses     #    0.31% of all L1-icache accesses  ( +-  0.85% )  (84.21%)
+         8,276,577      L1-icache-loads                                               ( +-  0.36% )  (83.35%)
+
+            0.5704 +- 0.0793 seconds time elapsed  ( +- 13.90% )
+

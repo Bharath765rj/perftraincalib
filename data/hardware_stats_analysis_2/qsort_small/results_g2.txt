@@ -1,0 +1,18 @@
+# started on Sun Apr 12 00:48:09 2026
+
+
+ Performance counter stats for '/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/qsort/bin/qsort_O3 ../benchmarks/bin/mibench/inputs/qsort_input_small.dat' (20 runs):
+
+               288      dTLB-load-misses          #   10.23% of all dTLB cache accesses  ( +-  1.31% )
+             2,711      dTLB-loads                                                    ( +-  0.49% )
+               323      iTLB-load-misses          #  158.88% of all iTLB cache accesses  ( +-  2.82% )
+               204      iTLB-loads                                                    ( +-  0.81% )
+             3,358      branch-misses:uk          #    0.00% of all branches          ( +-  2.77% )
+     <not counted>      branches:uk                                                   (0.00%)
+
+        0.00035949 +- 0.00000883 seconds time elapsed  ( +-  2.46% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog

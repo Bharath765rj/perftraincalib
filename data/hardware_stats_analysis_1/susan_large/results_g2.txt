@@ -1,0 +1,14 @@
+# started on Mon Apr  6 15:31:12 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/susan ../benchmarks/bin/mibench/inputs/susan_input_large.pgm /tmp/susan_output_large.pgm -s' (20 runs):
+
+               659      dTLB-load-misses          #   12.64% of all dTLB cache accesses  ( +-  7.57% )  (82.54%)
+             5,203      dTLB-loads                                                    ( +-  0.38% )  (82.50%)
+               334      iTLB-load-misses          #   41.43% of all iTLB cache accesses  ( +-  2.52% )  (82.52%)
+               842      iTLB-loads                                                    ( +-  2.54% )  (82.50%)
+           117,772      branch-misses:uk          #    0.43% of all branches          ( +-  0.18% )  (84.11%)
+        27,579,417      branches:uk                                                   ( +-  0.09% )  (85.84%)
+
+         0.0235445 +- 0.0000391 seconds time elapsed  ( +-  0.17% )
+

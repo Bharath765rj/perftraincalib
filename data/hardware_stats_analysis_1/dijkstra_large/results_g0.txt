@@ -1,0 +1,14 @@
+# started on Mon Apr  6 15:31:13 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/dijkstra_large ../benchmarks/bin/mibench/inputs/dijkstra_input.dat' (20 runs):
+
+       198,242,794      instructions:uk           #    2.49  insn per cycle           ( +-  0.12% )  (83.19%)
+        79,535,069      cpu-cycles:uk                                                 ( +-  0.09% )  (83.97%)
+           558,702      L1-dcache-load-misses     #    0.95% of all L1-dcache accesses  ( +-  1.22% )  (83.96%)
+        58,785,399      L1-dcache-loads                                               ( +-  0.04% )  (83.97%)
+             6,049      L1-icache-load-misses     #    1.22% of all L1-icache accesses  ( +-  1.08% )  (83.96%)
+           490,954      L1-icache-loads                                               ( +-  1.70% )  (80.95%)
+
+         0.0254469 +- 0.0000433 seconds time elapsed  ( +-  0.17% )
+

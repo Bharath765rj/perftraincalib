@@ -1,0 +1,14 @@
+# started on Sun Apr 12 19:58:14 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/fft 8 32768' (10 runs):
+
+             1,233      dTLB-load-misses          #    2.03% of all dTLB cache accesses  ( +-  4.47% )  (82.92%)
+            59,071      dTLB-loads                                                    ( +-  0.90% )  (82.92%)
+             2,198      iTLB-load-misses          # 1057.75% of all iTLB cache accesses  ( +-  3.41% )  (82.92%)
+               238      iTLB-loads                                                    ( +-  4.21% )  (83.89%)
+         1,263,293      branch-misses:uk          #    1.55% of all branches          ( +-  0.44% )  (84.32%)
+        81,451,132      branches:uk                                                   ( +-  0.08% )  (83.03%)
+
+             0.526 +- 0.106 seconds time elapsed  ( +- 20.17% )
+

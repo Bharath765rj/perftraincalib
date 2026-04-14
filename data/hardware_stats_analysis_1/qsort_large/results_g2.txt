@@ -1,0 +1,14 @@
+# started on Mon Apr  6 15:30:39 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/qsort_large ../benchmarks/bin/mibench/inputs/qsort_input_large.dat' (20 runs):
+
+             4,191      dTLB-load-misses          #   13.53% of all dTLB cache accesses  ( +-  1.15% )  (82.21%)
+            30,216      dTLB-loads                                                    ( +-  1.44% )  (83.55%)
+             3,491      iTLB-load-misses          #  591.09% of all iTLB cache accesses  ( +- 35.20% )  (83.72%)
+               592      iTLB-loads                                                    ( +-  0.67% )  (83.54%)
+         1,129,980      branch-misses:uk          #    1.03% of all branches          ( +-  0.15% )  (83.72%)
+       108,783,845      branches:uk                                                   ( +-  0.11% )  (83.26%)
+
+             1.600 +- 0.149 seconds time elapsed  ( +-  9.30% )
+

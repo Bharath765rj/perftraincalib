@@ -1,0 +1,14 @@
+# started on Sun Apr 12 00:49:20 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/dijkstra_small ../benchmarks/bin/mibench/inputs/dijkstra_input.dat' (20 runs):
+
+               527      dTLB-load-misses          #   11.56% of all dTLB cache accesses  ( +-  4.04% )  (80.04%)
+             4,630      dTLB-loads                                                    ( +-  0.43% )  (80.06%)
+               472      iTLB-load-misses          #  145.25% of all iTLB cache accesses  ( +-  2.48% )  (80.04%)
+               322      iTLB-loads                                                    ( +-  0.74% )  (80.02%)
+            56,855      branch-misses:uk          #    0.57% of all branches          ( +-  0.35% )  (89.75%)
+         9,844,410      branches:uk                                                   ( +-  0.57% )  (90.09%)
+
+         0.0051957 +- 0.0000223 seconds time elapsed  ( +-  0.43% )
+

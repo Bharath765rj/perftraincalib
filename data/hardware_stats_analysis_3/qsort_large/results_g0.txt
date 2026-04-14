@@ -1,0 +1,14 @@
+# started on Sun Apr 12 19:57:31 2026
+
+
+ Performance counter stats for '/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/qsort/bin/qsort_O3 ../benchmarks/bin/mibench/inputs/qsort_input_large.dat' (10 runs):
+
+       460,292,616      instructions:uk           #    1.05  insn per cycle           ( +-  0.14% )  (83.21%)
+       451,196,636      cpu-cycles:uk                                                 ( +-  1.10% )  (83.17%)
+         1,821,664      L1-dcache-load-misses     #    1.30% of all L1-dcache accesses  ( +-  1.09% )  (83.19%)
+       140,117,932      L1-dcache-loads                                               ( +-  0.16% )  (83.63%)
+           193,742      L1-icache-load-misses     #    0.69% of all L1-icache accesses  ( +-  4.40% )  (83.95%)
+        28,286,823      L1-icache-loads                                               ( +-  0.34% )  (82.86%)
+
+             1.058 +- 0.147 seconds time elapsed  ( +- 13.92% )
+

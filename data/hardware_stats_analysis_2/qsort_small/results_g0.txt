@@ -1,0 +1,18 @@
+# started on Sun Apr 12 00:48:09 2026
+
+
+ Performance counter stats for '/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/qsort/bin/qsort_O3 ../benchmarks/bin/mibench/inputs/qsort_input_small.dat' (20 runs):
+
+           597,867      instructions:uk           #    0.79  insn per cycle           ( +- 22.38% )
+           588,697      cpu-cycles:uk                                                 ( +- 20.68% )
+            13,012      L1-dcache-load-misses     #    4.62% of all L1-dcache accesses  ( +- 15.93% )
+           225,518      L1-dcache-loads                                               ( +- 21.70% )
+             1,386      L1-icache-load-misses     #    5.13% of all L1-icache accesses  ( +- 27.53% )
+     <not counted>      L1-icache-loads                                               (0.00%)
+
+           0.00340 +- 0.00302 seconds time elapsed  ( +- 88.71% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
