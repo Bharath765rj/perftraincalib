@@ -1,0 +1,94 @@
+warn: Base 10 memory/cache size 8GB will be cast to base 2 size 8GiB.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+warn: Base 10 memory/cache size 512kB will be cast to base 2 size 512KiB.
+warn: Base 10 memory/cache size 32MB will be cast to base 2 size 32MiB.
+warn: Base 10 memory/cache size 64MB will be cast to base 2 size 64MiB.
+Global frequency set at 1000000000000 ticks per second
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (8192 Mbytes)
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:32] into equal-sized buckets. Rounding up.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:8] into equal-sized buckets. Rounding up.
+system.remote_gdb: Listening for connections on port 7000
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Apr  4 2026 22:44:57
+gem5 started Apr 15 2026 16:17:39
+gem5 executing on c304-006.ls6.tacc.utexas.edu, pid 2333804
+command line: ../gem5/build/X86/gem5.opt --outdir=../data/gem5/bodytrack ../config/perftrain/zen3_config.py --bin=../benchmarks/bin/parsec/bodytrack '--opts=../benchmarks/bin/parsec/inputs/sequenceB_2 4 1 1000 3 0 1' --max_insts=0
+
+=== Starting simulation ===
+  Binary: ../benchmarks/bin/parsec/bodytrack
+  Args:   ../benchmarks/bin/parsec/inputs/sequenceB_2 4 1 1000 3 0 1
+  CPU:    O3CPU @ 2.45 GHz (Zen 3 Configuration)
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/base/loader/symtab.cc:95: warn: Cannot insert a new symbol table due to name collisions. Adding prefix to each symbol's name can resolve this issue.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+src/sim/syscall_emul.cc:86: warn: ignoring syscall set_robust_list(...)
+src/sim/syscall_emul.cc:97: warn: ignoring syscall rt_sigaction(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.cc:97: warn: ignoring syscall rt_sigprocmask(...)
+      (further warnings will be suppressed)
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+src/arch/generic/debugfaults.hh:145: warn: MOVNTDQ: Ignoring non-temporal hint, modeling as cacheable!
+src/arch/x86/faults.cc:166: panic: Tried to read unmapped address 0x4930a0.
+PC: (0x7ffff749fead=>0x7ffff749feb4).(0=>1), Instr:   MOVUPS_XMM_M : ldfp   %xmm4_low, DS:[rsi + 0x1000]
+Memory Usage: 9087256 KBytes
+Program aborted at tick 1123831512
+--- BEGIN LIBC BACKTRACE ---
+../gem5/build/X86/gem5.opt(_ZN4gem515print_backtraceEv+0x15)[0x1463605]
+../gem5/build/X86/gem5.opt(_ZN4gem512abortHandlerEi+0x39)[0x1486cb9]
+/usr/lib64/libpthread.so.0(+0x12d20)[0x150347e60d20]
+/usr/lib64/libc.so.6(gsignal+0x10f)[0x1503470ef52f]
+/usr/lib64/libc.so.6(abort+0x127)[0x1503470c2e65]
+../gem5/build/X86/gem5.opt[0xc4c6ef]
+../gem5/build/X86/gem5.opt(_ZN4gem56X86ISA9PageFault6invokeEPNS_13ThreadContextERKNS_14RefCountingPtrINS_10StaticInstEEE+0x157)[0xe0fd77]
+../gem5/build/X86/gem5.opt(_ZN4gem52o36Commit10commitHeadERKNS_14RefCountingPtrINS0_7DynInstEEEj+0x5b6)[0x1630c56]
+../gem5/build/X86/gem5.opt(_ZN4gem52o36Commit11commitInstsEv+0x3f9)[0x1632c89]
+../gem5/build/X86/gem5.opt(_ZN4gem52o36Commit6commitEv+0x960)[0x1634320]
+../gem5/build/X86/gem5.opt(_ZN4gem52o36Commit4tickEv+0xa7)[0x1634af7]
+../gem5/build/X86/gem5.opt(_ZN4gem52o33CPU4tickEv+0x9d)[0x163d59d]
+../gem5/build/X86/gem5.opt(_ZN4gem510EventQueue10serviceOneEv+0xa8)[0x14763f8]
+../gem5/build/X86/gem5.opt(_ZN4gem59doSimLoopEPNS_10EventQueueE+0x58)[0x14a7f38]
+../gem5/build/X86/gem5.opt(_ZN4gem58simulateEm+0x23e)[0x14a86ae]
+../gem5/build/X86/gem5.opt[0x23cffef]
+../gem5/build/X86/gem5.opt[0xc2dd97]
+/opt/apps/python/3.12.11/lib/libpython3.12.so.1.0(+0x26be82)[0x1503482d9e82]
+/opt/apps/python/3.12.11/lib/libpython3.12.so.1.0(_PyObject_Call+0xa2)[0x1503482d99a2]
+/opt/apps/python/3.12.11/lib/libpython3.12.so.1.0(_PyEval_EvalFrameDefault+0x494b)[0x15034828896b]
+/opt/apps/python/3.12.11/lib/libpython3.12.so.1.0(PyEval_EvalCode+0xac)[0x15034830004c]
+/opt/apps/python/3.12.11/lib/libpython3.12.so.1.0(+0x3a41c8)[0x1503484121c8]
+/opt/apps/python/3.12.11/lib/libpython3.12.so.1.0(+0x2650a4)[0x1503482d30a4]
+/opt/apps/python/3.12.11/lib/libpython3.12.so.1.0(PyObject_Vectorcall+0x4f)[0x1503482f4a6f]
+/opt/apps/python/3.12.11/lib/libpython3.12.so.1.0(_PyEval_EvalFrameDefault+0x6e8)[0x150348284708]
+/opt/apps/python/3.12.11/lib/libpython3.12.so.1.0(_PyObject_Call+0x50)[0x1503482d9950]
+../gem5/build/X86/gem5.opt[0x148b8f0]
+../gem5/build/X86/gem5.opt(main+0x1f7)[0xbcb267]
+/usr/lib64/libc.so.6(__libc_start_main+0xe5)[0x1503470db7e5]
+../gem5/build/X86/gem5.opt(_start+0x2e)[0xc1d0fe]
+--- END LIBC BACKTRACE ---
+For more info on how to address this issue, please visit https://www.gem5.org/documentation/general_docs/common-errors/ 
+

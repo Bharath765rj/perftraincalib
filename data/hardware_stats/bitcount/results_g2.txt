@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:10:55 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/bitcnts 75000' (20 runs):
+
+               235      l1_dtlb_misses:u                                              ( +-  7.18% )  (67.92%)
+         3,057,353      cpu/event=0x29,umask=0xff/                                     ( +-  7.16% )  (67.89%)
+               232      cpu/event=0x84,umask=0xff/                                     ( +-  4.06% )  (81.64%)
+         6,799,124      cpu/event=0x94,umask=0xff/                                     ( +-  0.16% )
+            17,558      branch-misses:u           #    0.20% of all branches          ( +-  0.38% )
+         8,654,746      branches:u                                                    ( +-  0.34% )  (82.55%)
+
+         0.0036351 +- 0.0000290 seconds time elapsed  ( +-  0.80% )
+

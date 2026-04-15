@@ -65,7 +65,7 @@ METRIC_DEFINITIONS = [
 
     # TLBs
     ('dtlb_mpki',
-     lambda r: safe_div(r['dTLB-load-misses'] * 1000, r['instructions:u']),
+        lambda r: safe_div(r['dTLB-load-misses'] * 1000, r['instructions:u']),
      'dtlb'),
     ('itlb_mpki',
      lambda r: safe_div(r['iTLB-load-misses'] * 1000, r['instructions:u']),

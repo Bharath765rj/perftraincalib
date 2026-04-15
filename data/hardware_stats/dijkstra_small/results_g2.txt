@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:12:15 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/dijkstra_small ../benchmarks/bin/mibench/inputs/dijkstra_input.dat' (20 runs):
+
+               642      l1_dtlb_misses:u                                              ( +-  2.28% )  (81.56%)
+        15,521,382      cpu/event=0x29,umask=0xff/                                     ( +-  0.14% )  (81.54%)
+               531      cpu/event=0x84,umask=0xff/                                     ( +-  0.77% )  (81.58%)
+         8,477,914      cpu/event=0x94,umask=0xff/                                     ( +-  0.09% )  (81.56%)
+            51,196      branch-misses:u           #    0.53% of all branches          ( +-  0.13% )  (89.07%)
+         9,645,174      branches:u                                                    ( +-  0.50% )  (84.70%)
+
+         0.0059562 +- 0.0000382 seconds time elapsed  ( +-  0.64% )
+

@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:38:33 2026
+
+
+ Performance counter stats for '../benchmarks/bin/parsec/swaptions -ns 64 -sm 100000 -nt 1' (20 runs):
+
+            88,706      l1_dtlb_misses:u                                              ( +-  1.66% )  (83.33%)
+    85,563,207,437      cpu/event=0x29,umask=0xff/                                     ( +-  0.01% )  (83.33%)
+               676      cpu/event=0x84,umask=0xff/                                     ( +-  2.42% )  (83.33%)
+    21,764,933,988      cpu/event=0x94,umask=0xff/                                     ( +-  0.03% )  (83.34%)
+       111,614,609      branch-misses:u           #    0.85% of all branches          ( +-  0.10% )  (83.33%)
+    13,057,216,018      branches:u                                                    ( +-  0.00% )  (83.34%)
+
+           20.1664 +- 0.0101 seconds time elapsed  ( +-  0.05% )
+

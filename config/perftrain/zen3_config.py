@@ -93,7 +93,15 @@ system.cpu.dcache = Cache(
     mshrs=22,
     tgts_per_mshr=20,
     writeback_clean=False,
-    prefetcher= StridePrefetcher(degree=4, latency=1)
+    #prefetcher= StridePrefetcher(degree=4, latency=1)
+    prefetcher = SignaturePathPrefetcher(
+        signature_shift     = 3,
+        signature_bits      = 12,
+        signature_table_entries ='1024',
+        pattern_table_entries   ='4096',
+        ) 
+    if hasattr(m5.objects, 'SignaturePathPrefetcher') else 
+    StridePrefetcher(degree=8, latency=1)
 )
 # --- L2 Cache ---
 system.l2cache = Cache(
@@ -117,6 +125,7 @@ system.l3cache = Cache(
     response_latency=10,
     mshrs=64,
     tgts_per_mshr=20,
+    clusivity='mostly_excl',
     writeback_clean= True
 )
 

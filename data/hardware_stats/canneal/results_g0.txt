@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:20:10 2026
+
+
+ Performance counter stats for '../benchmarks/bin/parsec/canneal 1 15000 2000 ../benchmarks/bin/parsec/inputs/200000.nets 2' (20 runs):
+
+    11,034,585,002      instructions:u            #    1.52  insn per cycle           ( +-  0.02% )  (83.30%)
+     7,254,244,738      cpu-cycles:u                                                  ( +-  0.07% )  (83.32%)
+        46,526,550      L1-dcache-load-misses     #    0.90% of all L1-dcache accesses  ( +-  0.30% )  (83.36%)
+     5,133,163,089      L1-dcache-loads                                               ( +-  0.05% )  (83.37%)
+           676,674      L1-icache-load-misses     #    0.15% of all L1-icache accesses  ( +-  5.22% )  (83.35%)
+       454,906,213      L1-icache-loads                                               ( +-  0.17% )  (83.31%)
+
+           2.30976 +- 0.00588 seconds time elapsed  ( +-  0.25% )
+

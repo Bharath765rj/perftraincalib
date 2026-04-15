@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:12:14 2026
+
+
+ Performance counter stats for '/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/susan/bin/susan_O4 ../benchmarks/bin/mibench/inputs/susan_input_large.pgm /tmp/susan_output_large.pgm -s' (20 runs):
+
+               495      l1_dtlb_misses:u                                              ( +- 10.56% )  (83.29%)
+        82,721,804      cpu/event=0x29,umask=0xff/                                     ( +-  0.02% )  (83.25%)
+               708      cpu/event=0x84,umask=0xff/                                     ( +-  0.54% )  (83.27%)
+        54,185,474      cpu/event=0x94,umask=0xff/                                     ( +-  0.02% )  (83.24%)
+           111,822      branch-misses:u           #    0.41% of all branches          ( +-  0.07% )  (83.28%)
+        27,520,142      branches:u                                                    ( +-  0.11% )  (83.67%)
+
+         0.0305917 +- 0.0000456 seconds time elapsed  ( +-  0.15% )
+

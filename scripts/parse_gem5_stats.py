@@ -50,16 +50,16 @@ GEM5_TO_HW = {
 # TLB stats
 TLB_CANDIDATES = {
     'dTLB-loads': [
-        'system.cpu.mmu.dtb.rdAccesses',
+        ['system.cpu.mmu.dtb.rdAccesses'],
     ],
     'dTLB-load-misses': [
-        'system.cpu.mmu.dtb.rdMisses',
+        ['system.cpu.mmu.dtb.rdMisses', 'system.cpu.mmu.dtb.wrMisses'],
     ],
     'iTLB-loads': [
-        'system.cpu.mmu.itb.rdAccesses',
+        ['system.cpu.mmu.itb.exAccesses'],
     ],
     'iTLB-load-misses': [
-        'system.cpu.mmu.itb.rdMisses',
+        ['system.cpu.mmu.itb.exMisses'],
     ],
 }
 
@@ -95,14 +95,17 @@ def map_to_hw_schema(raw):
             row[hw_name] = 0.0
 
     # TLB stats: try each candidate name until one matches
-    for hw_name, candidates in TLB_CANDIDATES.items():
+    for hw_name, candidate_groups in TLB_CANDIDATES.items():
         row[hw_name] = 0.0
-        for cand in candidates:
-            if cand in raw:
-                row[hw_name] = raw[cand]
+        for group in candidate_groups:
+            # Check if ANY stat in this group exists in the raw stats
+            matched = [raw[stat] for stat in group if stat in raw]
+            if matched:
+                # Sum all matching stats in this group
+                row[hw_name] = sum(matched)
                 break
-
-    # Derived: L1 miss rates (mirror what HW CSV has)
+   
+   # Derived: L1 miss rates (mirror what HW CSV has)
     if row.get('L1-dcache-loads', 0) > 0:
         row['l1d_miss_rate'] = (
             row['L1-dcache-load-misses'] / row['L1-dcache-loads']

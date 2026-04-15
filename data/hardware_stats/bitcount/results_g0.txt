@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:10:55 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/bitcnts 75000' (20 runs):
+
+        39,584,207      instructions:u            #    4.31  insn per cycle           ( +-  1.27% )  (67.92%)
+         9,124,321      cpu-cycles:u                                                  ( +-  0.34% )  (67.82%)
+             1,484      L1-dcache-load-misses     #    0.06% of all L1-dcache accesses  ( +-  4.75% )  (91.16%)
+         2,418,354      L1-dcache-loads                                               ( +-  1.29% )
+               191      L1-icache-load-misses     #    1.70% of all L1-icache accesses  ( +-  2.66% )
+             7,526      L1-icache-loads                                               ( +- 13.57% )  (73.10%)
+
+          0.003776 +- 0.000182 seconds time elapsed  ( +-  4.83% )
+

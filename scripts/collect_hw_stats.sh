@@ -24,7 +24,7 @@ mkdir -p "$DATA_DIR"
 
 pmc_c0="instructions:u,cpu-cycles:u,L1-dcache-load-misses:u,L1-dcache-loads:u,L1-icache-load-misses:u,L1-icache-loads:u"
 pmc_c1="l3_cache_accesses,l3_misses"
-pmc_c2="dTLB-load-misses:u,dTLB-loads:u,cpu/event=0x84,umask=0xff/,cpu/event=0x94,umask=0xff/,branch-misses:u,branches:u"
+pmc_c2="l1_dtlb_misses:u,cpu/event=0x29,umask=0xff/,cpu/event=0x84,umask=0xff/,cpu/event=0x94,umask=0xff/,branch-misses:u,branches:u"
 
 
 # ---- Helper function ----
@@ -53,6 +53,7 @@ run_benchmark() {
 # ============================================================================
 
 run_basicmath() {
+	run_benchmark "basicmath_dummy" "$BENCH_DIR/mibench/basicmath_large"
 	run_benchmark "basicmath_large" "$BENCH_DIR/mibench/basicmath_large"
 	run_benchmark "basicmath_small" "$BENCH_DIR/mibench/basicmath_small"
 }
@@ -92,6 +93,41 @@ run_blowfish() {
         run_benchmark "bf_small" "$BENCH_DIR/mibench/bf" "e" "$BENCH_DIR/mibench/inputs/bf_input_small.asc" "/tmp/bf_output_small.enc" "1234567890abcdeffedcba0987654321"
         run_benchmark "bf_large" "$BENCH_DIR/mibench/bf" "e" "$BENCH_DIR/mibench/inputs/bf_input_large.asc" "/tmp/bf_output_large.enc" "1234567890abcdeffedcba0987654321"
 }
+
+# ============================================================================
+# PARSEC Benchmarks
+# ============================================================================
+
+run_blackscholes() {
+	run_benchmark "blackscholes" "$BENCH_DIR/parsec/blackscholes" 1 "$BENCH_DIR/parsec/inputs/in_16K.txt" "$BENCH_DIR/parsec/inputs/prices.txt"
+}
+run_bodytrack() {
+	run_benchmark "bodytrack" "$BENCH_DIR/parsec/bodytrack" "$BENCH_DIR/parsec/inputs/sequenceB_2" 4 1 1000 3 0 1
+}
+run_canneal() {
+	run_benchmark "canneal" "$BENCH_DIR/parsec/canneal" 1 15000 2000 "$BENCH_DIR/parsec/inputs/200000.nets" 2
+}
+run_fluidanimate() {
+	run_benchmark "fluidanimate" "$BENCH_DIR/parsec/fluidanimate" 1 5 "$BENCH_DIR/parsec/inputs/in_100K.fluid" "$BENCH_DIR/parsec/inputs/out.fluid"
+}
+run_freqmine() {
+	run_benchmark "freqmine" "$BENCH_DIR/parsec/freqmine" "$BENCH_DIR/parsec/inputs/kosarak_500k.dat" 220
+}
+run_streamcluster() {
+	run_benchmark "streamcluster" "$BENCH_DIR/parsec/streamcluster" 10 20 128 1000 2000 5 "none" "$BENCH_DIR/parsec/inputs/output.txt" 1
+}
+run_swaptions() {
+	run_benchmark "swaptions" "$BENCH_DIR/parsec/swaptions" "-ns" 64 "-sm" 100000 "-nt" 1
+}
+run_vips() {
+	run_benchmark "vips" "$BENCH_DIR/parsec/vips" "im_benchmark" "$BENCH_DIR/parsec/inputs/vulture_2336x2336.v" "$BENCH_DIR/parsec/inputs/output.v"
+}
+
+
+
+
+
+
 # ============================================================================
 # Suite runners
 # ============================================================================
@@ -110,6 +146,21 @@ run_all_mibench() {
     run_sha
 }
 
+run_all_parsec() {
+    echo ""
+    echo "========== PARSEC Suite ========="
+    echo ""
+    run_blackscholes
+    run_bodytrack
+    run_canneal
+    run_fluidanimate
+    #run_freqmine
+    run_streamcluster
+    run_swaptions
+    run_vips
+}
+
+
 # ============================================================================
 # Main Call
 # ============================================================================
@@ -118,19 +169,30 @@ TARGET=${1:-all}
 case "$TARGET" in
 	all)
 		run_all_mibench
+		run_all_parsec
 		;;
-
-	mibench) run_all_mibench ;;
-    	basicmath)      run_basicmath ;;
-    	bitcount)       run_bitcount ;;
-    	qsort)          run_qsort ;;
-    	susan)          run_susan ;;
-    	dijkstra)       run_dijkstra ;;
-    	fft)            run_fft ;;
-	crc)		run_crc;;
-	gsm)		run_gsm;;
-	sha)            run_sha ;;
-	blowfish)	run_blowfish;;
+	mibench) 		run_all_mibench ;;
+	parsec) 		run_all_parsec ;;
+	
+	basicmath)      	run_basicmath ;;
+    	bitcount)       	run_bitcount ;;
+    	qsort)          	run_qsort ;;
+    	susan)          	run_susan ;;
+    	dijkstra)       	run_dijkstra ;;
+    	fft)            	run_fft ;;
+	crc)			run_crc ;;
+	gsm)			run_gsm ;;
+	sha)            	run_sha ;;
+	blowfish)		run_blowfish ;;
+	
+	blackscholes)    	run_blackscholes ;;
+	bodytrack)		run_bodytrack ;;
+	canneal) 		run_canneal ;;
+	fluidanimate) 		run_fluidanimate ;;
+	freqmine) 		run_freqmine ;;
+	streamcluster) 		run_streamcluster ;;
+	swaptions)		run_swaptions ;;
+	vip) 			run_vip ;;
  
 	
 	*)

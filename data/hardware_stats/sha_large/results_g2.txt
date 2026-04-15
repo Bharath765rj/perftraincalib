@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:19:24 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/sha ../benchmarks/bin/mibench/inputs/sha_input_large.asc' (20 runs):
+
+               393      l1_dtlb_misses:u                                              ( +- 42.11% )  (80.55%)
+        17,406,054      cpu/event=0x29,umask=0xff/                                     ( +-  0.14% )  (80.37%)
+               560      cpu/event=0x84,umask=0xff/                                     ( +- 10.01% )  (83.30%)
+        12,782,734      cpu/event=0x94,umask=0xff/                                     ( +-  0.02% )  (85.27%)
+            10,824      branch-misses:u           #    0.21% of all branches          ( +-  0.12% )  (85.24%)
+         5,189,268      branches:u                                                    ( +-  0.10% )  (85.28%)
+
+         0.0208889 +- 0.0000391 seconds time elapsed  ( +-  0.19% )
+

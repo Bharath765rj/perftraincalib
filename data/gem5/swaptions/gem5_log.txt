@@ -1,0 +1,25 @@
+warn: Base 10 memory/cache size 8GB will be cast to base 2 size 8GiB.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+warn: Base 10 memory/cache size 512kB will be cast to base 2 size 512KiB.
+warn: Base 10 memory/cache size 32MB will be cast to base 2 size 32MiB.
+TypeError: Enum param got bad value 'mostly_exc' (not in ['mostly_incl', 'mostly_excl'])
+Error setting param Cache.clusivity to mostly_exc
+
+
+At:
+  src/python/m5/params/enum_params.py(122): __init__
+  src/python/m5/params/base_params.py(239): convert
+  src/python/m5/SimObject.py(906): __setattr__
+  src/python/m5/SimObject.py(791): __init__
+  ../config/perftrain/zen3_config.py(120): <module>
+  src/python/m5/main.py(687): main
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Apr  4 2026 22:44:57
+gem5 started Apr 15 2026 15:51:46
+gem5 executing on c304-006.ls6.tacc.utexas.edu, pid 2333464
+command line: ../gem5/build/X86/gem5.opt --outdir=../data/gem5/swaptions ../config/perftrain/zen3_config.py --bin=../benchmarks/bin/parsec/swaptions '--opts=-ns 64 -sm 100000 -nt 1' --max_insts=0
+

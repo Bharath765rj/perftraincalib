@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:10:32 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/basicmath_small' (20 runs):
+
+        63,255,538      instructions:u            #    2.41  insn per cycle           ( +-  0.14% )  (82.73%)
+        27,182,305      cpu-cycles:u                                                  ( +-  0.42% )  (82.72%)
+             6,217      L1-dcache-load-misses     #    0.03% of all L1-dcache accesses  ( +-163.51% )  (82.91%)
+        18,460,761      L1-dcache-loads                                               ( +-  0.16% )  (83.63%)
+           163,940      L1-icache-load-misses     #    2.38% of all L1-icache accesses  ( +-  1.84% )  (84.47%)
+         7,072,636      L1-icache-loads                                               ( +-  0.32% )  (83.53%)
+
+             0.387 +- 0.115 seconds time elapsed  ( +- 29.57% )
+

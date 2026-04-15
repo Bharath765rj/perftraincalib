@@ -1,0 +1,14 @@
+# started on Wed Apr 15 14:51:47 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/basicmath_large' (20 runs):
+
+            85,400      l1_dtlb_misses:u                                              ( +-  2.13% )  (83.36%)
+     1,620,860,053      cpu/event=0x29,umask=0xff/                                     ( +-  0.14% )  (83.30%)
+               217      cpu/event=0x84,umask=0xff/                                     ( +-  1.55% )  (83.35%)
+       995,407,221      cpu/event=0x94,umask=0xff/                                     ( +-  0.16% )  (83.29%)
+         1,591,040      branch-misses:u           #    0.34% of all branches          ( +-  0.15% )  (83.43%)
+       471,883,795      branches:u                                                    ( +-  0.02% )  (83.27%)
+
+            14.095 +- 0.120 seconds time elapsed  ( +-  0.85% )
+

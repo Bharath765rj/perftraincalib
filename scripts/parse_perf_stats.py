@@ -14,6 +14,8 @@ from collections import defaultdict
 RAW_EVENT_ALIASES = {
     'cpu/event=0x84,umask=0xff/': 'iTLB-load-misses',
     'cpu/event=0x94,umask=0xff/': 'iTLB-load-hits',
+    'cpu/event=0x29,umask=0xff/': 'dTLB-loads',
+    'l1_dtlb_misses:u': 'dTLB-load-misses',
 }
 
 def parse_perf_file(filepath):

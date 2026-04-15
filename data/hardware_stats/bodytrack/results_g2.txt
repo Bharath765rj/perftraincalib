@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:19:59 2026
+
+
+ Performance counter stats for '../benchmarks/bin/parsec/bodytrack ../benchmarks/bin/parsec/inputs/sequenceB_2 4 1 1000 3 0 1' (20 runs):
+
+           776,812      l1_dtlb_misses:u                                              ( +-  0.08% )  (83.05%)
+     2,752,919,901      cpu/event=0x29,umask=0xff/                                     ( +-  0.05% )  (83.22%)
+            29,941      cpu/event=0x84,umask=0xff/                                     ( +-  3.77% )  (83.39%)
+       704,821,079      cpu/event=0x94,umask=0xff/                                     ( +-  0.07% )  (83.51%)
+           648,816      branch-misses:u           #    0.15% of all branches          ( +-  0.79% )  (83.52%)
+       431,965,739      branches:u                                                    ( +-  0.04% )  (83.43%)
+
+          0.530861 +- 0.000272 seconds time elapsed  ( +-  0.05% )
+

@@ -1,0 +1,14 @@
+# started on Wed Apr 15 15:19:34 2026
+
+
+ Performance counter stats for '../benchmarks/bin/parsec/blackscholes 1 ../benchmarks/bin/parsec/inputs/in_16K.txt ../benchmarks/bin/parsec/inputs/prices.txt' (20 runs):
+
+            17,709      l1_dtlb_misses:u                                              ( +-  1.53% )  (83.22%)
+       661,994,475      cpu/event=0x29,umask=0xff/                                     ( +-  0.11% )  (83.60%)
+             7,998      cpu/event=0x84,umask=0xff/                                     ( +-  0.82% )  (83.22%)
+       180,218,258      cpu/event=0x94,umask=0xff/                                     ( +-  0.19% )  (83.42%)
+           266,832      branch-misses:u           #    0.22% of all branches          ( +-  2.42% )  (83.41%)
+       120,159,385      branches:u                                                    ( +-  0.02% )  (83.19%)
+
+          0.244567 +- 0.000142 seconds time elapsed  ( +-  0.06% )
+
