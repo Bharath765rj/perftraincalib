@@ -80,30 +80,30 @@ def compute_derived_metrics(stats):
     br_misses = stats.get('branch-misses', 0)
     if insts > 0:
         derived['branch_mpki'] = (br_misses / insts) * 1000
-    if branches > 0:
-        derived['branch_miss_rate'] = br_misses / branches
+    #if branches > 0:
+        #derived['branch_miss_rate'] = br_misses / branches
 
     # L1D metrics
     l1d_loads = stats.get('L1-dcache-loads', 0)
     l1d_misses = stats.get('L1-dcache-load-misses', 0)
-    if l1d_loads > 0:
-        derived['l1d_miss_rate'] = l1d_misses / l1d_loads
+    #if l1d_loads > 0:
+        #derived['l1d_miss_rate'] = l1d_misses / l1d_loads
     if insts > 0:
         derived['l1d_mpki'] = (l1d_misses / insts) * 1000
 
     # L1I metrics
     l1i_loads = stats.get('L1-icache-loads', 0)
     l1i_misses = stats.get('L1-icache-load-misses', 0)
-    if l1i_loads > 0:
-        derived['l1i_miss_rate'] = l1i_misses / l1i_loads
+    #if l1i_loads > 0:
+        #derived['l1i_miss_rate'] = l1i_misses / l1i_loads
     if insts > 0:
         derived['l1i_mpki'] = (l1i_misses / insts) * 1000
 
     # LLC (L3) metrics
     llc_loads = stats.get('LLC-loads', 0)
     llc_misses = stats.get('LLC-load-misses', 0)
-    if llc_loads > 0:
-        derived['llc_miss_rate'] = llc_misses / llc_loads
+    #if llc_loads > 0:
+        #derived['llc_miss_rate'] = llc_misses / llc_loads
     if insts > 0:
         derived['llc_mpki'] = (llc_misses / insts) * 1000
 

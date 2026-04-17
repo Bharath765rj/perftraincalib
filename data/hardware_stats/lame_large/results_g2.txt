@@ -1,0 +1,14 @@
+# started on Thu Apr 16 22:46:56 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/lame ../benchmarks/bin/mibench/inputs/lame_large.wav' (20 runs):
+
+           116,031      l1_dtlb_misses:u                                              ( +-  0.17% )  (83.90%)
+       331,366,534      cpu/event=0x29,umask=0xff/                                     ( +-  0.11% )  (83.38%)
+            26,838      cpu/event=0x84,umask=0xff/                                     ( +-  0.37% )  (83.38%)
+       134,944,163      cpu/event=0x94,umask=0xff/                                     ( +-  0.10% )  (83.38%)
+         2,152,103      branch-misses:u           #    3.86% of all branches          ( +-  0.03% )  (83.53%)
+        56,149,725      branches:u                                                    ( +-  0.07% )  (82.45%)
+
+          0.098802 +- 0.000115 seconds time elapsed  ( +-  0.12% )
+

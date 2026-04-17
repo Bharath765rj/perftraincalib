@@ -35,32 +35,20 @@ METRIC_DEFINITIONS = [
     ('branch_mpki',
      lambda r: safe_div(r['branch-misses:u'] * 1000, r['instructions:u']),
      'branch_predictor'),
-    ('branch_miss_rate',
-     lambda r: safe_div(r['branch-misses:u'], r['branches:u']),
-     'branch_predictor'),
 
     # L1 Data cache
     ('l1d_mpki',
      lambda r: safe_div(r['L1-dcache-load-misses'] * 1000, r['instructions:u']),
-     'l1d_cache'),
-    ('l1d_miss_rate',
-     lambda r: safe_div(r['L1-dcache-load-misses'], r['L1-dcache-loads']),
      'l1d_cache'),
 
     # L1 Instruction cache
     ('l1i_mpki',
      lambda r: safe_div(r['L1-icache-load-misses'] * 1000, r['instructions:u']),
      'l1i_cache'),
-    ('l1i_miss_rate',
-     lambda r: safe_div(r['L1-icache-load-misses'], r['L1-icache-loads']),
-     'l1i_cache'),
 
     # L3 (LLC)
     ('l3_mpki',
      lambda r: safe_div(r['l3_misses'] * 1000, r['instructions:u']),
-     'l3_cache'),
-    ('l3_miss_rate',
-     lambda r: safe_div(r['l3_misses'], r['l3_cache_accesses']),
      'l3_cache'),
 
     # TLBs

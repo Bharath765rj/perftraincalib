@@ -1,0 +1,14 @@
+# started on Thu Apr 16 22:46:52 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/lame ../benchmarks/bin/mibench/inputs/lame_large.wav' (20 runs):
+
+       828,502,212      instructions:u            #    2.81  insn per cycle           ( +-  0.14% )  (83.93%)
+       297,204,470      cpu-cycles:u                                                  ( +-  0.10% )  (82.55%)
+         4,299,339      L1-dcache-load-misses     #    1.51% of all L1-dcache accesses  ( +-  0.38% )  (83.42%)
+       284,004,729      L1-dcache-loads                                               ( +-  0.02% )  (83.41%)
+           111,821      L1-icache-load-misses     #    1.08% of all L1-icache accesses  ( +-  0.72% )  (83.42%)
+        10,278,800      L1-icache-loads                                               ( +-  0.16% )  (83.27%)
+
+           0.10050 +- 0.00172 seconds time elapsed  ( +-  1.71% )
+

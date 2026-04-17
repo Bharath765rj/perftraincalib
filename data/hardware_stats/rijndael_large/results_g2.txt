@@ -1,0 +1,14 @@
+# started on Thu Apr 16 22:57:29 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/rijndael /work/10492/bv6788/ls6/CPU_PERF_EVAL/FINAL_PROJECT/benchmarks/mibench/security/rijndael/input_large.asc rijndael_output_large.enc e 1234567890abcdeffedcba09876543211234567890abcdeffedcba0987654321' (20 runs):
+
+             8,730      l1_dtlb_misses:u                                              ( +-  0.57% )  (83.25%)
+        93,770,005      cpu/event=0x29,umask=0xff/                                     ( +-  0.14% )  (82.94%)
+            57,381      cpu/event=0x84,umask=0xff/                                     ( +-  0.23% )  (82.96%)
+        28,322,444      cpu/event=0x94,umask=0xff/                                     ( +-  0.09% )  (82.93%)
+             4,711      branch-misses:u           #    0.03% of all branches          ( +-  0.83% )  (85.36%)
+        13,848,492      branches:u                                                    ( +-  0.37% )  (82.56%)
+
+           0.02883 +- 0.00137 seconds time elapsed  ( +-  4.75% )
+

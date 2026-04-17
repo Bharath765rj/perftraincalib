@@ -1,14 +1,14 @@
-# started on Wed Apr 15 14:42:29 2026
+# started on Thu Apr 16 22:29:46 2026
 
 
  Performance counter stats for '../benchmarks/bin/mibench/basicmath_large' (20 runs):
 
-     2,145,645,588      instructions:u            #    3.12  insn per cycle           ( +-394010.30% )  (83.24%)
-       688,310,751      cpu-cycles:u                                                  ( +-  0.05% )  (83.29%)
-           957,924      L1-dcache-load-misses     #    0.17% of all L1-dcache accesses  ( +-  4.82% )  (83.29%)
-       575,963,277      L1-dcache-loads                                               ( +-  0.02% )  (83.37%)
-         3,817,008      L1-icache-load-misses     #    2.07% of all L1-icache accesses  ( +-  1.59% )  (83.44%)
-       183,420,540      L1-icache-loads                                               ( +-  0.10% )  (83.37%)
+     2,141,052,227      instructions:u            #    3.05  insn per cycle           ( +-  0.02% )  (83.40%)
+       694,888,473      cpu-cycles:u                                                  ( +-  0.12% )  (83.27%)
+           914,549      L1-dcache-load-misses     #    0.16% of all L1-dcache accesses  ( +- 10.02% )  (83.34%)
+       576,872,000      L1-dcache-loads                                               ( +-  0.03% )  (83.47%)
+         4,549,589      L1-icache-load-misses     #    2.45% of all L1-icache accesses  ( +-  1.63% )  (83.38%)
+       183,637,798      L1-icache-loads                                               ( +-  0.19% )  (83.15%)
 
-            13.809 +- 0.223 seconds time elapsed  ( +-  1.61% )
+            16.511 +- 0.434 seconds time elapsed  ( +-  2.63% )
 

@@ -10,8 +10,7 @@ Hardware CSV schema (target):
     cpu-cycles:u, instructions:u,
     dTLB-load-misses, dTLB-loads,
     iTLB-load-misses, iTLB-loads,
-    l3_cache_accesses, l3_misses,
-    l1d_miss_rate, l1i_miss_rate
+    l3_cache_accesses, l3_misses
 
 Usage:
     python3 scripts/parse_gem5_stats.py data/gem5/ data/combined/gem5_stats.csv
@@ -105,21 +104,6 @@ def map_to_hw_schema(raw):
                 row[hw_name] = sum(matched)
                 break
    
-   # Derived: L1 miss rates (mirror what HW CSV has)
-    if row.get('L1-dcache-loads', 0) > 0:
-        row['l1d_miss_rate'] = (
-            row['L1-dcache-load-misses'] / row['L1-dcache-loads']
-        )
-    else:
-        row['l1d_miss_rate'] = 0.0
-
-    if row.get('L1-icache-loads', 0) > 0:
-        row['l1i_miss_rate'] = (
-            row['L1-icache-load-misses'] / row['L1-icache-loads']
-        )
-    else:
-        row['l1i_miss_rate'] = 0.0
-
     # num_groups is meaningless for gem5 (no counter multiplexing) — set to 1
     row['num_groups'] = 1
 
@@ -182,7 +166,6 @@ def main():
         'iTLB-load-misses', 'iTLB-loads',
         'instructions:u',
         'l3_cache_accesses', 'l3_misses',
-        'l1d_miss_rate', 'l1i_miss_rate',
     ]
 
     with open(output_csv, 'w', newline='') as f:
