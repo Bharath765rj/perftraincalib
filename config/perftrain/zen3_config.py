@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser(description='PerfTrain Zen 3 gem5 Configuration
 parser.add_argument('--bin', type=str, required=True, help='Path to benchmark binary')
 parser.add_argument('--opts', type=str, required=True, help='Benchmark args')
 parser.add_argument('--input', type=str, required=False, help='Input params')
-parser.add_argument('--warmup-insts', type=int, default=10_000_000,help='Instructions to warm up before stats (default 10M)')
+parser.add_argument('--warmup-insts', type=int, default=25_000_000,help='Instructions to warm up before stats (default 10M)')
 
 # Limit max_inst args for quick runs 
 parser.add_argument('--max_insts', type=int, default=0, help='Max Instuctions to simualte - default: Run Completely')
@@ -32,7 +32,7 @@ system.clk_domain = SrcClockDomain(
     voltage_domain=VoltageDomain()
 )
 system.mem_mode = 'timing'
-system.mem_ranges = [AddrRange('8GB')]
+system.mem_ranges = [AddrRange('64GB')]
 
 # ================================================================
 # CPU: O3CPU configured for Zen 3
@@ -59,8 +59,8 @@ for iq in system.cpu.instQueues:
     iq.numEntries = 192
 system.cpu.numPhysIntRegs   = 192
 system.cpu.numPhysFloatRegs = 160
-system.cpu.LQEntries        = 72
-system.cpu.SQEntries        = 64
+system.cpu.LQEntries        = 128
+system.cpu.SQEntries        = 96
 
 system.cpu.fetchToDecodeDelay    = 1
 system.cpu.decodeToRenameDelay   = 1
@@ -81,7 +81,7 @@ system.cpu.icache = Cache(
     tag_latency=4,
     data_latency=4,
     response_latency=1,
-    mshrs=8,
+    mshrs=20,
     tgts_per_mshr=20,
     writeback_clean=False
 )
@@ -90,22 +90,22 @@ system.cpu.icache = Cache(
 system.cpu.dcache = Cache(
     size='32kB',
     assoc=8,
-    tag_latency=1,
-    data_latency=1,
+    tag_latency=4,
+    data_latency=4,
     response_latency=1,
-    mshrs=8,
+    mshrs=20,
     tgts_per_mshr=20,
-    writeback_clean=False,
+    writeback_clean=False
     #prefetcher= StridePrefetcher(degree=4, latency=1)
-    prefetcher = SignaturePathPrefetcher(
-        signature_shift     = 3,
-        signature_bits      = 12,
-        signature_table_entries ='1024',
-        pattern_table_entries   ='4096',
-        prefetch_on_access = True,
-        ) 
-    if hasattr(m5.objects, 'SignaturePathPrefetcher') else 
-    StridePrefetcher(degree=8, latency=1, queue_size=64,)
+    #prefetcher = SignaturePathPrefetcher(
+    #    signature_shift     = 3,
+    #    signature_bits      = 12,
+    #    signature_table_entries ='1024',
+    #    pattern_table_entries   ='4096',
+    #    prefetch_on_access = True,
+    #    ) 
+    #if hasattr(m5.objects, 'SignaturePathPrefetcher') else 
+    #StridePrefetcher(degree=8, latency=1, queue_size=64,)
 )
 # --- L2 Cache ---
 system.l2cache = Cache(
@@ -114,30 +114,36 @@ system.l2cache = Cache(
         tag_latency=12,
         data_latency=12,
         response_latency=5,
-        mshrs=32,
+        mshrs=64,
         tgts_per_mshr=20,
-        writeback_clean= True,
-        prefetcher= StridePrefetcher(degree=8, latency=1,queue_size = 64,prefetch_on_access = True,)
+        writeback_clean= True
+        #prefetcher= StridePrefetcher(degree=4, latency=1,queue_size = 32,prefetch_on_access = True,)
 )
 
 # --- L3 / LLC Cache ---
 system.l3cache = Cache(
-    size='32MB',
+    size='4MB',
     assoc=16,
     tag_latency=46,
     data_latency=46,
     response_latency=10,
-    mshrs=64,
+    mshrs=128,
     tgts_per_mshr=20,
     writeback_clean= True
 )
-try:
-    system.cpu.mmu.dtb.size = 2048
-    system.cpu.mmu.itb.size = 512
-except AttributeError:
-    system.cpu.dtb.size = 2048
-    system.cpu.itb.size = 512
 
+
+# --- L1 / L2 TLBs ---
+system.cpu.mmu.dtb.size = 64
+#system.cpu.mmu.dtb.l2_size = 2048 
+#system.cpu.mmu.dtb.l2_assoc = 8
+#system.cpu.mmu.dtb.l2_hit_latency = 7
+
+
+system.cpu.mmu.itb.size = 64
+#system.cpu.mmu.itb.l2_size = 512
+#system.cpu.mmu.itb.l2_assoc = 8
+#system.cpu.mmu.itb.l2_hit_latency = 7
 
 # ================================================================
 # Interconnects
@@ -159,13 +165,43 @@ system.l3cache.mem_side     = system.membus.cpu_side_ports
 system.cpu.interrupts[0].pio = system.membus.mem_side_ports
 system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
 system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
+
 # ================================================================
 # Memory Controller — DDR4_2400 (8-channel)
 # ================================================================
-system.mem_ctrl = MemCtrl()
-system.mem_ctrl.dram = DDR4_2400_8x8()
-system.mem_ctrl.dram.range = system.mem_ranges[0]
-system.mem_ctrl.port = system.membus.mem_side_ports
+import math 
+num_channels = 8
+intlv_bits = int(math.log(num_channels, 2)) # 3 bits for 8 channels
+intlv_size = 256
+
+system.mem_ctrls = [MemCtrl() for _ in range(num_channels)]
+
+for i, ctrl in enumerate(system.mem_ctrls):
+    
+    ctrl.dram = DDR4_2400_8x8( 
+            # Timings for DDR4-3200 (CL22)
+            tCK = '0.625ns',      # 1600 MHz clock
+            tCL = '13.75ns',     # CAS Latency (22 cycles * 0.625ns)
+            tRP = '13.75ns',     # Row Precharge
+            tRCD = '13.75ns',    # RAS to CAS Delay
+            tRAS = '32ns',       # ACT to PRE delay
+            
+            device_size = '512MiB',
+            device_bus_width = 8,
+            devices_per_rank = 8
+            )
+    # Interleave the total memory range across all 8 controllers
+    ctrl.dram.range = AddrRange(
+            start=system.mem_ranges[0].start,
+            size=system.mem_ranges[0].size(),
+            intlvHighBit=intlv_bits + int(math.log(intlv_size, 2)) - 1,
+            xorHighBit=0,
+            intlvBits=intlv_bits,
+            intlvMatch=i
+            )
+    # Connect to the memory bus (crossbar)
+    ctrl.port = system.membus.mem_side_ports
+
 
 
 #--- Branch Predictor ---
@@ -190,7 +226,6 @@ system.cpu.workload = process
 system.cpu.createThreads()
 
 system.system_port = system.membus.cpu_side_ports
-
 
 # ================================================================
 # Simulate 

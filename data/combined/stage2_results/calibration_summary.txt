@@ -1,0 +1,45 @@
+==============================================================================
+ PERFTRAIN STAGE 2: CALIBRATION COMPLETE
+==============================================================================
+
+S1: Global scaling factor
+------------------------------------------------------------------------------
+  alpha_G = 0.427008
+  -> gem5 over-predicts CPI by ~57.3% on average
+     (equivalently: gem5 under-predicts IPC by the same amount)
+
+S2: Learned per-component coefficients (cycles per feature unit)
+------------------------------------------------------------------------------
+  alpha_0_bias           =     0.760016
+  branch_mpki            =     0.002260  (effective cycles per MPKI unit)
+  l1d_mpki               =     0.000000  <-- zeroed by NNLS (not useful for this training set)
+  l1i_mpki               =     0.118206  (effective cycles per MPKI unit)
+  l3_mpki                =     0.000000  <-- zeroed by NNLS (not useful for this training set)
+  dtlb_mpki              =     0.044308  (effective cycles per MPKI unit)
+  itlb_mpki              =     0.004476  (effective cycles per MPKI unit)
+
+==============================================================================
+ Accuracy comparison: Raw -> S1 -> S1+S2
+==============================================================================
+Stage                    CPI MAPE      CPI MPE     IPC MAPE      IPC MPE
+------------------------------------------------------------------------------
+Raw gem5                  145.83%       145.54%        53.16%       -52.88%
+After S1 (shift)           27.89%         4.85%        34.09%        10.36%
+After S1 + S2              16.52%         3.94%        17.20%         0.67%
+
+Total CPI MAPE reduction: 129.31 percentage points
+Total IPC MAPE reduction: 35.96 percentage points
+  of which S1 (global shift) contributes: 117.94 pp
+  of which S2 (per-component) contributes: 11.37 pp
+
+==============================================================================
+ Diagnostic interpretation
+==============================================================================
+  S1 contributed more than S2. The error is dominated by
+  systematic global bias (voltage/frequency/op cache abstraction).
+  This matches PowerTrain's experience on Cortex-A15, which was
+  similarly dominated by voltage scaling bias.
+
+  Largest S2 coefficient: l1i_mpki = 0.1182
+  -> this gem5 feature provides the strongest signal for
+     correcting hardware CPI.

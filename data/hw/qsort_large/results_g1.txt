@@ -1,0 +1,10 @@
+# started on Sun Apr 19 02:13:18 2026
+
+
+ Performance counter stats for 'system wide' (20 runs):
+
+         5,663,844      l3_cache_accesses                                             ( +-  2.15% )
+         2,923,031      l3_misses                                                     ( +-  2.71% )
+
+            1.1664 +- 0.0687 seconds time elapsed  ( +-  5.89% )
+

@@ -1,0 +1,14 @@
+# started on Sun Apr 19 02:15:07 2026
+
+
+ Performance counter stats for '../benchmarks/bin/mibench/toast -fps -c ../benchmarks/bin/mibench/inputs/large.au' (20 runs):
+
+            18,650      cpu/event=0x45,umask=0xff/                                     ( +-  0.97% )  (83.01%)
+       377,055,820      cpu/event=0x29,umask=0xff/                                     ( +-  0.01% )  (83.01%)
+               228      cpu/event=0x85,umask=0x07/                                     ( +- 10.15% )  (83.16%)
+       147,293,875      cpu/event=0x94,umask=0xff/                                     ( +-  0.02% )  (83.90%)
+         2,074,154      branch-misses:u           #    3.56% of all branches          ( +-  0.05% )  (83.90%)
+        58,294,835      branches:u                                                    ( +-  0.03% )  (83.01%)
+
+             0.390 +- 0.115 seconds time elapsed  ( +- 29.36% )
+

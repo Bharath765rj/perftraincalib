@@ -18,13 +18,13 @@ module load python/3.12.11
 CORE=0
 RUNS=20
 BENCH_DIR="../benchmarks/bin"
-DATA_DIR="../data/hardware_stats"
+DATA_DIR="../data/hw"
 
 mkdir -p "$DATA_DIR"
 
 pmc_c0="instructions:u,cpu-cycles:u,L1-dcache-load-misses:u,L1-dcache-loads:u,L1-icache-load-misses:u,L1-icache-loads:u"
 pmc_c1="l3_cache_accesses,l3_misses"
-pmc_c2="l1_dtlb_misses:u,cpu/event=0x29,umask=0xff/,cpu/event=0x84,umask=0xff/,cpu/event=0x94,umask=0xff/,branch-misses:u,branches:u"
+pmc_c2="cpu/event=0x45,umask=0xff/,cpu/event=0x29,umask=0xff/,cpu/event=0x85,umask=0x07/,cpu/event=0x94,umask=0xff/,branch-misses:u,branches:u"
 
 
 # ---- Helper function ----
@@ -58,7 +58,7 @@ run_basicmath() {
 	#run_benchmark "basicmath_small" "$BENCH_DIR/mibench/basicmath_small"
 }
 run_bitcount() {
-        run_benchmark "bitcount" "$BENCH_DIR/mibench/bitcnts" 75000
+        run_benchmark "bitcount" "$BENCH_DIR/mibench/bitcnts" 1125000
 }
 run_qsort() {
         #run_benchmark "qsort_small" "/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/qsort/bin/qsort_O3"  "$BENCH_DIR/mibench/inputs/qsort_input_small.dat"
@@ -69,18 +69,18 @@ run_susan() {
 	run_benchmark "susan_large" "/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/susan/bin/susan_O4" "$BENCH_DIR/mibench/inputs/susan_input_large.pgm" "/tmp/susan_output_large.pgm" "-s"
 
 }
-#run_dijkstra() {
+run_dijkstra() {
 	#run_benchmark "dijkstra_small" "$BENCH_DIR/mibench/dijkstra_small" "$BENCH_DIR/mibench/inputs/dijkstra_input.dat"
-	#run_benchmark "dijkstra_large" "$BENCH_DIR/mibench/dijkstra_large" "$BENCH_DIR/mibench/inputs/dijkstra_input.dat"
-#}
-#run_patricia() {
-	#run_benchmark "patricia_small" "$BENCH_DIR/mibench/patricia" "$BENCH_DIR/mibench/inputs/patricia_input_small.udp"
-	#run_benchmark "patricia_large" "$BENCH_DIR/mibench/patricia" "$BENCH_DIR/mibench/inputs/patricia_input_large.udp"
-#}
-run_lame() {
-	#run_benchmark "lame_small" "$BENCH_DIR/mibench/lame" "$BENCH_DIR/mibench/inputs/lame_small.wav"
-	run_benchmark "lame_large" "$BENCH_DIR/mibench/lame" "$BENCH_DIR/mibench/inputs/lame_large.wav"
+	run_benchmark "dijkstra_large" "$BENCH_DIR/mibench/dijkstra_large" "$BENCH_DIR/mibench/inputs/dijkstra_input.dat"
 }
+run_patricia() {
+	#run_benchmark "patricia_small" "$BENCH_DIR/mibench/patricia" "$BENCH_DIR/mibench/inputs/patricia_input_small.udp"
+	run_benchmark "patricia_large" "$BENCH_DIR/mibench/patricia" "$BENCH_DIR/mibench/inputs/patricia_input_large.udp"
+}
+#run_lame() {
+	#run_benchmark "lame_small" "$BENCH_DIR/mibench/lame" "$BENCH_DIR/mibench/inputs/lame_small.wav"
+	#run_benchmark "lame_large" "$BENCH_DIR/mibench/lame" "$BENCH_DIR/mibench/inputs/lame_large.wav"
+#}
 run_fft() {
 	#run_benchmark "fft_small" "$BENCH_DIR/mibench/fft" 4 4096
 	run_benchmark "fft_large" "$BENCH_DIR/mibench/fft" 8 32768
@@ -154,7 +154,7 @@ run_all_mibench() {
     run_susan
     #run_dijkstra
     #run_patricia 
-    run_lame
+    #run_lame
     run_fft
     run_crc
     run_gsm

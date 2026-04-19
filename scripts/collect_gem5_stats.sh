@@ -33,10 +33,10 @@ run_gem5() {
 # MiBench benchmarks
 # =====================
 
-#run_gem5 "basicmath_large" "$BENCH_DIR/mibench/basicmath_large" "" ""
+run_gem5 "basicmath_large" "$BENCH_DIR/mibench/basicmath_large" "" ""
 #run_gem5 "basicmath_small" "$BENCH_DIR/mibench/basicmath_small" "" ""
 
-#run_gem5 "bitcount" "$BENCH_DIR/mibench/bitcnts" "75000" ""
+#run_gem5 "bitcount" "$BENCH_DIR/mibench/bitcnts" "1125000" ""
 
 #run_gem5 "qsort_small" "/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/qsort/bin/qsort_O3" "$BENCH_DIR/mibench/inputs/qsort_input_small.dat" ""
 #run_gem5 "qsort_large" "/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/qsort/bin/qsort_O3" "$BENCH_DIR/mibench/inputs/qsort_input_large.dat" ""
@@ -45,31 +45,31 @@ run_gem5() {
 #run_gem5 "susan_large" "/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/susan/bin/susan_O4" "$BENCH_DIR/mibench/inputs/susan_input_large.pgm $BENCH_DIR/mibench/inputs/susan_output_large.pgm -s" ""
 
 #run_gem5 "dijkstra_small" "$BENCH_DIR/mibench/dijkstra_small" "$BENCH_DIR/mibench/inputs/dijkstra_input.dat" ""
-#run_gem5 "dijkstra_large" "$BENCH_DIR/mibench/dijkstra_large" "$BENCH_DIR/mibench/inputs/dijkstra_input.dat" ""
+run_gem5 "dijkstra_large" "$BENCH_DIR/mibench/dijkstra_large" "$BENCH_DIR/mibench/inputs/dijkstra_input.dat" ""
 
 #run_gem5 "patricia_small" "$BENCH_DIR/mibench/patricia" "$BENCH_DIR/mibench/inputs/patricia_input_small.udp" ""
-#run_gem5 "patricia_large" "$BENCH_DIR/mibench/patricia" "$BENCH_DIR/mibench/inputs/patricia_input_large.udp" ""
+run_gem5 "patricia_large" "$BENCH_DIR/mibench/patricia" "$BENCH_DIR/mibench/inputs/patricia_input_large.udp" ""
 
 #run_gem5 "lame_small" "$BENCH_DIR/mibench/lame" "$BENCH_DIR/mibench/inputs/lame_small.wav" ""
 #run_gem5 "lame_large" "$BENCH_DIR/mibench/lame" "$BENCH_DIR/mibench/inputs/lame_large.wav" ""
 
 #run_gem5 "fft_small" "$BENCH_DIR/mibench/fft" "4 4096" ""
-run_gem5 "fft_large" "$BENCH_DIR/mibench/fft" "8 32768" ""
+#run_gem5 "fft_large" "$BENCH_DIR/mibench/fft" "8 32768" ""
 
 #run_gem5 "crc_small" "$BENCH_DIR/mibench/crc" "$BENCH_DIR/mibench/inputs/small.pcm" ""
-run_gem5 "crc_large" "$BENCH_DIR/mibench/crc" "$BENCH_DIR/mibench/inputs/large.pcm" ""
+#run_gem5 "crc_large" "$BENCH_DIR/mibench/crc" "$BENCH_DIR/mibench/inputs/large.pcm" ""
 
 #run_gem5 "gsm_small" "$BENCH_DIR/mibench/toast" "-fps -c $BENCH_DIR/mibench/inputs/small.au" ""
-run_gem5 "gsm_large" "$BENCH_DIR/mibench/toast" "-fps -c $BENCH_DIR/mibench/inputs/large.au" ""
+#run_gem5 "gsm_large" "$BENCH_DIR/mibench/toast" "-fps -c $BENCH_DIR/mibench/inputs/large.au" ""
 
 #run_gem5 "sha_small" "$BENCH_DIR/mibench/sha" "$BENCH_DIR/mibench/inputs/sha_input_small.asc" ""
-run_gem5 "sha_large" "$BENCH_DIR/mibench/sha" "$BENCH_DIR/mibench/inputs/sha_input_large.asc" ""
+#run_gem5 "sha_large" "$BENCH_DIR/mibench/sha" "$BENCH_DIR/mibench/inputs/sha_input_large.asc" ""
 
 #run_gem5 "bf_small" "$BENCH_DIR/mibench/bf" "e $BENCH_DIR/mibench/inputs/bf_input_small.asc bf_output_small.enc 1234567890abcdeffedcba0987654321" ""
 #run_gem5 "bf_large" "$BENCH_DIR/mibench/bf" "e $BENCH_DIR/mibench/inputs/bf_input_large.asc bf_output_large.enc 1234567890abcdeffedcba0987654321" ""
 
 #rungem5 "rijndael_small" "$BENCH_DIR/mibench/rijndael" "$BENCH_DIR/mibench/inputs/rijndael_input_small.asc rijndael_output_small.enc e 1234567890abcdeffedcba09876543211234567890abcdeffedcba0987654321" ""
-run_gem5 "rijndael_large" "$BENCH_DIR/mibench/rijndael" "$BENCH_DIR/mibench/inputs/rijndael_input_large.asc rijndael_output_large.enc e 1234567890abcdeffedcba09876543211234567890abcdeffedcba0987654321" ""
+#run_gem5 "rijndael_large" "$BENCH_DIR/mibench/rijndael" "$BENCH_DIR/mibench/inputs/rijndael_input_large.asc rijndael_output_large.enc e 1234567890abcdeffedcba09876543211234567890abcdeffedcba0987654321" ""
 
 
 

@@ -1,0 +1,14 @@
+# started on Sun Apr 19 02:13:42 2026
+
+
+ Performance counter stats for '/work/10492/bv6788/ls6/CPU_PERF_EVAL/LABS/Lab4/benchmarks/qsort/bin/qsort_O3 ../benchmarks/bin/mibench/inputs/qsort_input_large.dat' (20 runs):
+
+            29,486      cpu/event=0x45,umask=0xff/                                     ( +-  1.90% )  (83.36%)
+       187,212,501      cpu/event=0x29,umask=0xff/                                     ( +-  0.07% )  (83.46%)
+             5,190      cpu/event=0x85,umask=0x07/                                     ( +-  4.08% )  (83.47%)
+       118,688,616      cpu/event=0x94,umask=0xff/                                     ( +-  0.06% )  (83.56%)
+           545,928      branch-misses:u           #    0.75% of all branches          ( +-  0.21% )  (83.41%)
+        72,618,232      branches:u                                                    ( +-  0.17% )  (82.74%)
+
+             1.121 +- 0.102 seconds time elapsed  ( +-  9.12% )
+

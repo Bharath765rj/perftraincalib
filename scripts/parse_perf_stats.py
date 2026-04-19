@@ -12,10 +12,10 @@ from pathlib import Path
 from collections import defaultdict
 
 RAW_EVENT_ALIASES = {
-    'cpu/event=0x84,umask=0xff/': 'iTLB-load-misses',
+    'cpu/event=0x85,umask=0x07/': 'iTLB-load-misses',
     'cpu/event=0x94,umask=0xff/': 'iTLB-load-hits',
     'cpu/event=0x29,umask=0xff/': 'dTLB-loads',
-    'l1_dtlb_misses:u': 'dTLB-load-misses',
+    'cpu/event=0x45,umask=0xff/': 'dTLB-load-misses',
 }
 
 def parse_perf_file(filepath):
@@ -108,8 +108,8 @@ def compute_derived_metrics(stats):
         derived['llc_mpki'] = (llc_misses / insts) * 1000
 
     # TLB metrics
-    dtlb_misses = stats.get('dTLB-load-misses', 0)
-    itlb_misses = stats.get('cpu/event=0x84,umask=0xff/', 0)
+    dtlb_misses = stats.get('cpu/event=0x45,umask=0xff/', 0)
+    itlb_misses = stats.get('cpu/event=0x85,umask=0x07/', 0)
     if insts > 0:
         derived['dtlb_mpki'] = (dtlb_misses / insts) * 1000
         derived['itlb_mpki'] = (itlb_misses / insts) * 1000

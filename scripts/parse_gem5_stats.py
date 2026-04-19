@@ -52,7 +52,7 @@ TLB_CANDIDATES = {
         ['system.cpu.mmu.dtb.rdAccesses'],
     ],
     'dTLB-load-misses': [
-        ['system.cpu.mmu.dtb.rdMisses', 'system.cpu.mmu.dtb.wrMisses'],
+        ['system.cpu.mmu.dtb.wrMisses'], #'system.cpu.mmu.dtb.rdMisses'],
     ],
     'iTLB-loads': [
         ['system.cpu.mmu.itb.exAccesses'],
